@@ -1,0 +1,11 @@
+"workshopitem"
+{
+ "appid"            "282440"
+ "publishedfileid"  "0"
+ "contentfolder"    "D:\Games\Quake Live\almostrun\content"
+ "previewfile"      "D:\Games\Quake Live\almostrun\screenshots\shot0001.jpg"
+ "visibility"       "2"
+ "title"            "Almost Run"
+ "description"      "Almost Lost and Blood Run merged into one. All game modes are supported including CTF, One Flag, Harvester (except Race). Start: /map almostrun tdm"
+ "changenote"       "Version 0.1"
+}
