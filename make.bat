@@ -1,6 +1,7 @@
 set RadiantPath="D:\Games\netradiant-custom-20240309"
 set EnginePath="D:\Games\wolfcamql12.6"
 set SteamCmdPath="D:\Games\steamcmd"
+set SteamVdfPath="D:\Games\Quake Live\almostrun"
 
 @echo off
 if "%1" == "" goto usage
@@ -61,7 +62,7 @@ if "%SteamPass%"=="" (
 	echo set SteamPass=your_steam_password
 	goto end
 )
-%SteamCmdPath%\steamcmd.exe +login %SteamUser% %SteamPass% +workshop_build_item almostrun.vdf +quit
+%SteamCmdPath%\steamcmd.exe +login %SteamUser% %SteamPass% +workshop_build_item %SteamVdfPath%\almostrun.vdf +quit
 goto end
 
 :end
