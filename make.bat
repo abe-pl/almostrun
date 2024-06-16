@@ -1,5 +1,6 @@
 set RadiantPath="D:\Games\netradiant-custom-20240309"
 set EnginePath="D:\Games\wolfcamql12.6"
+set ZipPath="C:\Program Files\7-zip"
 set SteamCmdPath="D:\Games\steamcmd"
 set SteamVdfPath="D:\Games\Quake Live\almostrun"
 
@@ -14,6 +15,7 @@ goto end
 :usage
 echo requirements:
 echo - [https://github.com/Garux/netradiant-custom] 
+echo - [https://7-zip.org]
 echo - [https://github.com/brugal/wolfcamql]
 echo - [pak00.pk3 from Quakelive\baseq3 to wolfcamql\baseq3]
 echo - [zz-q3netpack.pk3 from netradiant-custom\gamepacks\Q3.game to wolfcamql\baseq3]
@@ -29,7 +31,6 @@ goto end
 del src\maps\almostrun.bsp
 del src\maps\almostrun.srf
 del src\maps\almostrun.aas
-rd /s /q target
 del bspc.log
 goto end
 
@@ -45,12 +46,9 @@ if not exist src\maps\almostrun.bsp (
 	echo Build map first: make.bat build
 	goto end
 )
-rd /s /q target
 rd /s /q content
-robocopy src target /e /xf *.map *.srf *.log
-powershell Compress-Archive -Force -Path target\* almostrun.zip
 mkdir content
-move /y almostrun.zip content\almostrun.pk3
+%ZipPath%\7z.exe a -tzip content\almostrun.pk3 .\src\* -xr!*.map -xr!*.srf -xr!*.log -xr!*.bak
 goto end
 
 :upload

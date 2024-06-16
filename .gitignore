@@ -1,7 +1,7 @@
+*.bak
 *.aas
 *.bsp
 *.srf
 *.pk3
-bspc.log
-target/*
+*.log
 content/*
